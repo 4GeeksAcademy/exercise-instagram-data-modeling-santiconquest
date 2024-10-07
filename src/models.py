@@ -37,9 +37,9 @@ class Follower(Base):
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    follower_id = Column(Integer, ForeignKey('follower.id'))
+    follower_id = Column(Integer, ForeignKey('user.id'))
     follower = relationship(User)
-    following_id = Column(Integer, ForeignKey('following.id'))
+    following_id = Column(Integer, ForeignKey('user.id'))
     following = relationship(User)
 
 class Comments(Base):
